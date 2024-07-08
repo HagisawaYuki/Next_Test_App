@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { Button } from "@/components/ui/button";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,9 +29,9 @@ export default function RootLayout({
           <h1 className="font-bold">next-test-app</h1>
           <ul className="flex gap-4">
             {navItems.map(item => <li key={item.label}>
-              <button>
+              <Button variant="ghost" asChild>
                 <Link href={item.href}>{item.label}</Link>
-              </button>
+              </Button>
             </li>)}
           </ul>
         </header>
